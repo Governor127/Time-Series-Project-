@@ -15,7 +15,7 @@ df.head(5)
 df.tail(5)
 #focusing on the hign value of the stock
 df = df["high"]
-df head()
+df.head()
 
 #function to plot the time series
 def plot_series(data): 
@@ -41,7 +41,7 @@ for i, val in enumerate(data):
 x = np.asarray(x)
 y = np.asarray(y)
 
-        return x,y
+return x,y
 
 X_train, y_train = arrange(train, 15)
     print("x-shape is: {} and y-shape is: {}". format(X-train.shape, y_train.shape))
