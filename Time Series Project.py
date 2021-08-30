@@ -4,8 +4,8 @@ import pandas as pd
 import matplotlib.pylot as plt #plot within notebook
 import tensorflow as tf
 from tensorflow import keras
-from keras.model import Sequential
-from keras.layer import SimpleRNN, Dense, Input
+from keras.models import Sequential
+from keras.layers import SimpleRNN, Dense, Input
 
 #Reading data
 path = "Uniqlo(FastRetailing) 2012-2016 Training - stocks2012-2016.csv"
@@ -14,7 +14,7 @@ df = pd.read_csv(path)
 df.head(5)
 df.tail(5)
 #focusing on the hign value of the stock
-df = df{"high"}
+df = df["high"]
 df head()
 
 #function to plot the time series
@@ -23,7 +23,7 @@ def plot_series(data):
        plt.plot(df)
 plt.show()
 
-#Splitting the train-test data using 80% of the whole dataset for training and tearting 
+#Splitting the train-test data using 80% of the whole dataset for training and testing 
 train = df[:int(0.8*len(df))]
 test = df[int(0.8*len(df)):]
 
@@ -38,8 +38,8 @@ for i, val in enumerate(data):
         x.append((data[i-window: i-1]).values.reshape(-1,1))
         y.append(data[i:i+1].values.reshape(-1,1))
 #converting the list into numpy array for fast computation
-        x = np.asarray(x)
-        y = np.asarray(y)
+x = np.asarray(x)
+y = np.asarray(y)
 
         return x,y
 
